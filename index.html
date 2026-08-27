@@ -35,7 +35,7 @@
         <div class="container hero-layout">
             <div class="hero-content">
                 <span class="badge">Frontend Software Developer</span>
-                <h1>Building digital experiences with <span class="highlight">purpose.</span></h1>
+                <h1 id="animate-text">Building digital experiences with <span class="highlight">purpose.</span></h1>
                 <p>I'm Alen Justinian, a frontend developer and active member of <strong>AI-HUB at Mbeya University of Science and Technology (MUST)</strong>. I turn complex ideas into clear, responsive, and intelligent web interfaces.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn primary-btn">View My Work <i class="fas fa-arrow-right"></i></a>
@@ -191,24 +191,33 @@
                 </div>
 
                 <!-- SMS Form -->
+                
                 <div class="sms-form-container">
-                    <h3>Send Direct SMS Message</h3>
-                    <p class="form-desc">Type your message here to send an immediate SMS directly to my personal phone number.</p>
-                    
-                    <form id="smsForm">
-                        <div class="form-group">
-                            <label for="senderName">Your Name</label>
-                            <input type="text" id="senderName" placeholder="e.g. irene siima" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="smsMessage">Message</label>
-                            <textarea id="smsMessage" rows="4" placeholder="Write your message or inquiry here..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary-btn btn-full">
-                            <i class="fas fa-sms"></i> Send via SMS
-                        </button>
-                    </form>
-                </div>
+    <h3>Send Direct SMS Message</h3>
+    <p class="form-desc">Type your message here to send an immediate SMS directly to my personal phone number.</p>
+    
+    <form id="smsForm">
+        <!-- Name Group -->
+        <div class="form-group-animated">
+            <input type="text" id="senderName" placeholder=" " required>
+            <label for="senderName">Your Name (e.g. Irene Siima)</label>
+            <span class="input-focus-line"></span>
+        </div>
+
+        <!-- Message Group -->
+        <div class="form-group-animated">
+            <textarea id="smsMessage" rows="4" placeholder=" " required></textarea>
+            <label for="smsMessage">Write your message or inquiry here...</label>
+            <span class="input-focus-line"></span>
+        </div>
+
+        <button type="submit" class="btn primary-btn btn-full">
+            <i class="fas fa-sms"></i> Send via SMS
+        </button>
+    </form>
+</div>
+
+                
             </div>
         </div>
     </section>

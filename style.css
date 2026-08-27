@@ -409,3 +409,170 @@ body {
         width: 100%;
     }
 }
+/* 1. Muundo mkuu wa maandishi ya Hero */
+#animate-text {
+    display: inline-block; /* Inaruhusu animation ya kusogea ifanye kazi vizuri */
+    white-space: normal;   /* Inaruhusu maandishi kujipanga yenyewe mistari miwili yakikosa nafasi */
+    opacity: 0;            /* Anza yakiwa hayaonekani */
+    
+    /* Kuchanganya animation mbili: Kuingia kushoto (slideLeft) na kuelea (floating) */
+    animation: 
+        slideLeft 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards, 
+        floating 4s ease-in-out infinite 1.5s; 
+}
+
+/* 2. Animation ya mwanzo: Maandishi kuingia kuelekea KUSHOTO */
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px); /* Anzia mbali upande wa kulia */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);     /* Fika kituo chake cha kawaida */
+    }
+}
+
+/* 3. Animation ya pili: Maandishi kuelea (Floating effect) juu na chini */
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);  /* Pandisha juu kidogo */
+    }
+    100% {
+        transform: translateY(0px);   /* Rudi chini */
+    }
+}
+/* 1. Muonekano wa Kontena la Fomu */
+.sms-form-container {
+    background: linear-gradient(145deg, #131928, #0b0f19);
+    border: 1px solid rgba(255, 115, 0, 0.15);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 450px;
+    margin: 20px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.sms-form-container h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.form-desc {
+    color: #8fa0dd;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    line-height: 1.4;
+}
+
+/* 2. Muundo wa Kusisimua wa Input na Label (Floating Labels) */
+.form-group-animated {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* Mitindo ya Input na Textarea */
+.form-group-animated input,
+.form-group-animated textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Unapobonyeza sanduku (Focus) au likiwa na maandishi */
+.form-group-animated input:focus,
+.form-group-animated textarea:focus {
+    border-color: rgba(255, 115, 0, 0.5);
+    background: rgba(255, 115, 0, 0.02);
+    box-shadow: 0 0 15px rgba(255, 115, 0, 0.1);
+}
+
+/* Mpangilio wa mwanzo wa Label (Inakaa kama Placeholder) */
+.form-group-animated label {
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    color: #64748b;
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+    font-size: 0.95rem;
+    background: transparent;
+}
+
+/* ANIMATION: Mtumiaji akikanda au kuanza kuandika, label inapanda juu */
+.form-group-animated input:focus ~ label,
+.form-group-animated input:not(:placeholder-shown) ~ label,
+.form-group-animated textarea:focus ~ label,
+.form-group-animated textarea:not(:placeholder-shown) ~ label {
+    top: -10px;
+    left: 12px;
+    font-size: 0.75rem;
+    color: #ff7300; /* Rangi ya machungwa ya AI-HUB */
+    background: #0b0f19; /* Inafunika mstari wa border */
+    padding: 0 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Mstari wa mwanga chini ya sanduku wakati wa kuandika */
+.input-focus-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff7300, #ffaa00);
+    transition: all 0.3s ease;
+}
+
+.form-group-animated input:focus ~ .input-focus-line,
+.form-group-animated textarea:focus ~ .input-focus-line {
+    width: 100%;
+    left: 0;
+}
+
+/* 3. Muundo wa Kitufe cha Kutuma (Button) */
+.btn-full {
+    width: 100%;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #ff7300, #e05600);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 115, 0, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 115, 0, 0.5);
+    background: linear-gradient(135deg, #ff851b, #ff7300);
+}
+
+.primary-btn:active {
+    transform: translateY(0);
+}
